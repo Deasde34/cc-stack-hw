@@ -13,6 +13,8 @@ int main()
         std::cout<<"1 - Push Items."<< std::endl;
         std::cout<<"2 - Pop Items."<< std::endl;
         std::cout<<"3 - Mostrar Items (Print STACK)."<< std::endl;
+        std::cout<<"4 - borrar todo el stack"<< std::endl;
+
          
         std::cout << "Introduce una Opcion: ";
         std::cin >> choice;
@@ -40,6 +42,9 @@ int main()
             case 3:
                 stk.displayItems();
                 break;
+            case 4:
+            stk.deleteEven();
+            break;
              
             default:
                 std::cout << "Opcion Invalida."<< std::endl;

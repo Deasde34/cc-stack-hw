@@ -12,6 +12,7 @@ class STACK
         int isEmpty();
         int isFull();
         void displayItems();
+        void deleteEven();
 };
 
 STACK::STACK(){
@@ -60,3 +61,19 @@ void STACK::displayItems(){
         std::cout<< num[i] <<" ";
     std::cout << std::endl;
 }
+
+void STACK::deleteEven(){
+    int i, temp;
+   for (i = (top); i >= 0; i-- ){
+
+    temp=num[top];
+    --top;
+   }
+}
+    
+
+
+
+    
+
+
