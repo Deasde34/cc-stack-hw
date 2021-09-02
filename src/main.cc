@@ -1,57 +1,30 @@
-#include <iostream>
-#include "data.hh"
+#include<iostream>
+#include "Videogame.hh"
+#include "Stack.hh"
 
 int main()
 {
-    STACK stk;
-    int choice, n,temp;
-     
-    do
-    {
-        std:: cout << std::endl;
-        std::cout<<"0 - Exit."<< std::endl;
-        std::cout<<"1 - Push Items."<< std::endl;
-        std::cout<<"2 - Pop Items."<< std::endl;
-        std::cout<<"3 - Mostrar Items (Print STACK)."<< std::endl;
-        std::cout<<"4 - borrar todo el stack"<< std::endl;
+  VideoGame* videoGame1{new VideoGame("Risk of Rain 2", "Hopoo Games", 235.38)};
+  VideoGame* videoGame2{new VideoGame("Phasmophobia", "Trello", 149.99)};
+  VideoGame* videoGame3{new VideoGame("Stardew Valley", "ConcernedApe", 149.99)};
+  VideoGame* videoGame4{new VideoGame("Sekiro™:Shadows Die Twice", "FromSoftware", 1299.99)};
 
-         
-        std::cout << "Introduce una Opcion: ";
-        std::cin >> choice;
-         
-        switch(choice){
-             
-            case 1:
-                std::cout << "Introduzca dato a insertar: ";
-                std::cin >> n;
-                temp=stk.push(n);
-                if(temp==0)
-                    std::cout << "El stack está lleno."<< std::endl;
-                else
-                    std::cout << temp <<"Dato Insertado."<< std::endl;
-            break;
-                 
-            case 2:
-                temp=stk.pop();
-                if(temp==0)
-                    std::cout << "STACK vacío. " << std::endl;
-                else
-                    std::cout << temp << " Se ha removido (popped)."<< std::endl;
-            break;
-             
-            case 3:
-                stk.displayItems();
-                break;
-            case 4:
-            stk.deleteEven();
-            break;
-             
-            default:
-                std::cout << "Opcion Invalida."<< std::endl;
-        }   
-    }while(choice!=0);
- 
-     
-    return 0;
-     
+  Stack* stack{new Stack()};
+  stack->Push(videoGame1);
+  stack->Push(videoGame2);
+  stack->Push(videoGame3);
+  stack->Push(videoGame4);
+  stack->Print();
+
+  stack->Pop();
+  stack->Pop();
+  stack->Pop();
+
+  stack->Print();
+
+  std::cin.get();
+
+  delete stack;
+  return 0;
 }
+
